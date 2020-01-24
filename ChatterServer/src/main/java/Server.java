@@ -1,8 +1,9 @@
-import com.sun.security.ntlm.Client;
+
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.MessageDigestSpi;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Server {
     public void start() throws IOException {
         serverSocket = new ServerSocket(PORT);
         System.out.println("Server started");
+
 
         while(true){
             System.out.println("Waiting for new client...");
