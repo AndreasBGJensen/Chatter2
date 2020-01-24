@@ -38,8 +38,6 @@ public class ClientConnection {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void stop(){
@@ -51,8 +49,4 @@ public class ClientConnection {
     public String toString(){
         return String.format("Client{ %s:%d }", socket.getLocalAddress(), socket.getLocalPort());
     }
-
-
-
-
 }
