@@ -1,5 +1,6 @@
 import com.google.gson.Gson;
 
+
 public class Message {
     private int code;
     private String message;
@@ -20,5 +21,10 @@ public class Message {
 
     public String getMessage() {
         return message;
+    }
+
+    public String encode(){
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
