@@ -8,14 +8,14 @@ import java.net.Socket;
 
 public class Communicate {
 
-//    private Socket socket;
-//
-//    private PrintWriter out;
-//    private BufferedReader in;
-//
-//    public Communicate(Socket socket){
-//        this.socket = socket;
-//    }
+    private Socket socket;
+
+    private PrintWriter out;
+    private BufferedReader in;
+
+    public Communicate(Socket socket){
+        this.socket = socket;
+    }
 /*
 
     private PrintWriter out;

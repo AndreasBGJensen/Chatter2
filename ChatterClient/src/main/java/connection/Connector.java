@@ -77,9 +77,22 @@ public class Connector {
         }
     }
 
+    private void getIP() throws IOException{
+        try{
+            String ipAddress;
+            System.out.println("Enter the IP address you wish to connect to: ");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            ipAddress = reader.readLine();
+            ip = ipAddress;
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         System.out.println("Starting program");
         Connector connector = new Connector();
+        connector.getIP();
         connector.connect();
         connector.communicate();
     }
