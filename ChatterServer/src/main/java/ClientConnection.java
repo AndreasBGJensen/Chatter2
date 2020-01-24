@@ -1,10 +1,14 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class ClientConnection {
 
     private Socket socket;
-    private String name;
     private Thread thread;
+    private BufferedReader inputReader;
 
 
     public ClientConnection( Socket socket ){
@@ -20,13 +24,21 @@ public class ClientConnection {
 
 
     public void listen(){
-        /*try{
-            System.out.println("Client interruted");
+        try{
+            inputReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            while(true){
+                System.out.println("Waiting for input from client...");
+                String input = inputReader.readLine();
+                System.out.println("Input from client: "+input);
+            }
 
+        } catch (SocketException e){
+            System.out.println("Lost client");
 
-        }catch(InterruptedException interrupted){
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        }*/
 
     }
 
@@ -34,6 +46,11 @@ public class ClientConnection {
         thread.interrupt();
     }
 
+
+    @Override
+    public String toString(){
+        return String.format("Client{ %s:%d }", socket.getLocalAddress(), socket.getLocalPort());
+    }
 
 
 
