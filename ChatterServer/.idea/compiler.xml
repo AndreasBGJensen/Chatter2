@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ChatterClient" />
         <module name="ChatterServer" />
+        <module name="ChatterCommon" />
       </profile>
     </annotationProcessing>
   </component>
