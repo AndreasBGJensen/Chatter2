@@ -1,4 +1,6 @@
-import com.google.gson.Gson;
+package main.java;
+
+/*
 
 
 public class Message {
@@ -11,6 +13,8 @@ public class Message {
     }
 
     public static Message decode(String message ){
+
+
         Gson gson = new Gson();
         return gson.fromJson(message, Message.class);
     }
@@ -28,3 +32,5 @@ public class Message {
         return gson.toJson(this);
     }
 }
+
+*/

@@ -1,4 +1,4 @@
-package connection;
+package main.java.connection;
 
 import java.io.IOException;
 import java.net.Socket;
